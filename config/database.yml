@@ -23,3 +23,6 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+access_key_id: AKIAJU4YMRHJBM4MESTQ
+secret_access_key: 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

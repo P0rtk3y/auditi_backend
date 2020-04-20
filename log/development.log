@@ -500,3 +500,149 @@ Migrating to CreateAudiocards (20200420173722)
   ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAudiocard Create (0.6ms)[0m  [1m[32mINSERT INTO "audiocards" ("category", "mood", "created_at") VALUES (?, ?, ?)[0m  [["category", "music"], ["mood", "happy"], ["created_at", "2020-04-20 18:41:40.695960"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.3ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAudiocard Update (0.6ms)[0m  [1m[33mUPDATE "audiocards" SET "user_id" = ? WHERE "audiocards"."id" = ?[0m  [["user_id", 1], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.3ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.1ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" ORDER BY "audiocards"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" WHERE "audiocards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAudiocard Load (0.2ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" WHERE "audiocards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateAudiocards (20200420173722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "audiocards"[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200420173722"]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateAudiocards (20200420173722)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "audiocards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "category" varchar, "tags" varchar, "soundfile" varchar, "soundster" varchar, "image" varchar, "mood" varchar, "privateCard" boolean, "favorite" boolean, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_audiocards_on_user_id" ON "audiocards" ("user_id")[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420173722"]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateAudiocards (20200420173722)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "audiocards"[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200420173722"]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateAudiocards (20200420173722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "audiocards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "category" varchar, "tags" varchar, "soundfile" varchar, "soundster" varchar, "image" varchar, "mood" varchar, "privatecard" boolean, "favorite" boolean, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_audiocards_on_user_id" ON "audiocards" ("user_id")[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420173722"]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddAttachmentSoundfileToAudiocards (20200420202327)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "audiocards" ADD "soundfile_file_name" varchar[0m
+  ↳ db/migrate/20200420202327_add_attachment_soundfile_to_audiocards.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "audiocards" ADD "soundfile_content_type" varchar[0m
+  ↳ db/migrate/20200420202327_add_attachment_soundfile_to_audiocards.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "audiocards" ADD "soundfile_file_size" bigint[0m
+  ↳ db/migrate/20200420202327_add_attachment_soundfile_to_audiocards.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "audiocards" ADD "soundfile_updated_at" datetime[0m
+  ↳ db/migrate/20200420202327_add_attachment_soundfile_to_audiocards.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420202327"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAudiocard Create (0.6ms)[0m  [1m[32mINSERT INTO "audiocards" ("user_id", "mood", "created_at") VALUES (?, ?, ?)[0m  [["user_id", 1], ["mood", "happy"], ["created_at", "2020-04-20 20:24:47.351506"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAudiocard Load (1.4ms)[0m  [1m[34mSELECT  "audiocards".* FROM "audiocards" LIMIT ?[0m  [["LIMIT", 11]]

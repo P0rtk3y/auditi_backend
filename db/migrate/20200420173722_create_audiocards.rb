@@ -4,11 +4,11 @@ class CreateAudiocards < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :category
       t.string :tags
-      t.string :soundFile
+      t.string :soundfile
       t.string :soundster
       t.string :image
       t.string :mood
-      t.boolean :privateCard
+      t.boolean :privatecard
       t.boolean :favorite
       t.index ["user_id"], name: "index_audiocards_on_user_id"
 
