@@ -1,0 +1,2 @@
+class Audiocard < ApplicationRecord
+end

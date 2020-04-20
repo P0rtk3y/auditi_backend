@@ -4,14 +4,13 @@ class Api::V1::UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
-  # # GET /users/1
-  # def show
-  #   render json: @user
-  # end
+  # GET /users/1
+  def show
+    render json: @user, status: 200
+  end
 
   # POST /users
   def create
