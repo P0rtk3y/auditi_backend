@@ -477,3 +477,26 @@ Migrating to CreateUsers (20200419235944)
   [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "password_digest", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["firstname", "Peep"], ["lastname", "Quinn"], ["email", "peep@mail.com"], ["password_digest", "password"], ["created_at", "2020-04-20 17:33:48.004413"]]
   [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+Migrating to CreateAudiocards (20200420173722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "audiocards" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "category" varchar, "tags" varchar, "soundFile" varchar, "soundster" varchar, "image" varchar, "mood" varchar, "privateCard" boolean, "favorite" boolean, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_audiocards_on_user_id" ON "audiocards" ("user_id")[0m
+  ↳ db/migrate/20200420173722_create_audiocards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200420173722"]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/bin/rake:23
