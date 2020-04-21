@@ -1,5 +1,5 @@
-class AudiocardsController < ApplicationController
-  before_action :set_audiocard, only: [:show, :update, :destroy]
+class Api::V1::AudiocardsController < ApplicationController
+  # before_action :set_audiocard, only: [:show, :update, :destroy]
 
   # GET /audiocards
   def index
