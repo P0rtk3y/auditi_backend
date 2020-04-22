@@ -1402,3 +1402,137 @@ Processing by Api::V1::SessionsController#create as */*
 Completed 200 OK in 248ms (Views: 0.4ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:27:14 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 263ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:39:36 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 258ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/get_current_user" for ::1 at 2020-04-21 22:44:21 -0700
+Processing by Api::V1::SessionsController#get_current_user as */*
+  Parameters: {"session"=>{}}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  
+app/controllers/application_controller.rb:4:in `current_user'
+app/controllers/application_controller.rb:8:in `logged_in?'
+app/controllers/api/v1/sessions_controller.rb:14:in `get_current_user'
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:46:08 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:46:32 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 265ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:48:10 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 246ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:49:23 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 266ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/get_current_user" for ::1 at 2020-04-21 22:51:53 -0700
+Processing by Api::V1::SessionsController#get_current_user as */*
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 22:52:11 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 249ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/users/2" for ::1 at 2020-04-21 23:18:03 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/skout/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:44
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 23:18:11 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/get_current_user" for ::1 at 2020-04-21 23:19:16 -0700
+Processing by Api::V1::SessionsController#get_current_user as */*
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 23:19:19 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2020-04-21 23:19:29 -0700
+Processing by Api::V1::SessionsController#create as */*
+  Parameters: {"email"=>"peep@mailio.com", "password"=>"[FILTERED]", "session"=>{"email"=>"peep@mailio.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "peep@mailio.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3
+Completed 200 OK in 244ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/get_current_user" for ::1 at 2020-04-21 23:20:01 -0700
+Processing by Api::V1::SessionsController#get_current_user as */*
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
