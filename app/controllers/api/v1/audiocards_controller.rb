@@ -1,15 +1,16 @@
 class Api::V1::AudiocardsController < ApplicationController
-  # before_action :set_audiocard, only: [:show, :update, :destroy]
+  before_action :set_audiocard, only: [:show, :update, :destroy]
 
   # GET /audiocards
   def index
     if logged_in?
       @audiocards = current_user.audiocards
-      render json: @audiocards
+      render json: AudiocardSerializer.new(@audiocards)
     else  
       render json: {
         error: "Must be logged in"
       }
+    end
   end
 
   # GET /audiocards/1
@@ -19,11 +20,14 @@ class Api::V1::AudiocardsController < ApplicationController
 
   # POST /audiocards
   def create
-    @audiocard = Audiocard.new(audiocard_params)
+    @audiocard = current_user.trips.build(audiocard_params)
 
     if @audiocard.save
-      render json: @audiocard, status: :created, location: @audiocard
+      render json: AudiocardSerializer.new(@audiocard), status: :created
     else
+      error_resp = {
+        error: @audiocard.errors.full_messages.to_sentence
+      }
       render json: @audiocard.errors, status: :unprocessable_entity
     end
   end
@@ -50,6 +54,6 @@ class Api::V1::AudiocardsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def audiocard_params
-      params.fetch(:audiocard, {})
+      params.require(:audiocard).permit(:category, :tags, :soundfile, :soundster, :image)
     end
 end
