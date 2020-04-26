@@ -3,9 +3,13 @@ class Api::V1::AudiocardsController < ApplicationController
 
   # GET /audiocards
   def index
-    @audiocards = Audiocard.all
-
-    render json: @audiocards
+    if logged_in?
+      @audiocards = current_user.audiocards
+      render json: @audiocards
+    else  
+      render json: {
+        error: "Must be logged in"
+      }
   end
 
   # GET /audiocards/1
