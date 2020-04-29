@@ -3,4 +3,5 @@ class User < ApplicationRecord
     has_many :audiocards
 
     validates :email, presence: true
+    validates :email, uniqueness: true
 end
