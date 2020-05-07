@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_202327) do
+ActiveRecord::Schema.define(version: 2020_04_29_081619) do
 
   create_table "audiocards", force: :cascade do |t|
     t.integer "user_id"
     t.string "category"
-    t.string "tags"
+    t.text "tags"
     t.string "soundfile"
     t.string "soundster"
     t.string "image"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_202327) do
     t.datetime "created_at", null: false
     t.string "soundfile_file_name"
     t.string "soundfile_content_type"
-    t.bigint "soundfile_file_size"
+    t.integer "soundfile_file_size"
     t.datetime "soundfile_updated_at"
     t.index ["user_id"], name: "index_audiocards_on_user_id"
   end

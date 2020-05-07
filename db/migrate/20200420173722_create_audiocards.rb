@@ -3,7 +3,7 @@ class CreateAudiocards < ActiveRecord::Migration[5.2]
     create_table :audiocards do |t|
       t.integer :user_id
       t.string :category
-      t.string :tags
+      t.string :tags, array: true, default: []
       t.string :soundfile
       t.string :soundster
       t.string :image
