@@ -20,8 +20,10 @@ class Api::V1::AudiocardsController < ApplicationController
 
   # POST /audiocards
   def create
+
     @audiocard = Audiocard.new(audiocard_params)
-    
+    @audiocard.soundfile.attach(audiocard_params[:soundfile])
+ 
     if @audiocard.save
       render json: AudiocardSerializer.new(@audiocard), status: :created
     else
@@ -54,7 +56,9 @@ class Api::V1::AudiocardsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def audiocard_params
-      # params[:audiocard][:tags] ||=[]
-      params.require(:audiocard).permit(:category, :soundfile, :soundster, :image, :favorite, :created_at, :user_id, tags: [])
+      params[:audiocard][:tags] ||=[]
+      params.require(:audiocard).permit(:category, :soundfile, :soundster, :image, :favorite, :created_at, :user_id, :tags)
     end
 end
+
+# tags: []

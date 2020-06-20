@@ -1,6 +1,6 @@
 class Audiocard < ApplicationRecord
     belongs_to :user
-    # has_attached_file :soundfile, 
+    has_one_attached :soundfile
     #                    styles: {mp3: {}},
     #                    processors: [:ffmpeg_wav_to_mp3], 
     #                    :path => ':user_id/:style/:filename',
