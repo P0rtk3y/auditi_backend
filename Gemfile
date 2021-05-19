@@ -17,7 +17,7 @@ gem 's3_direct_upload'
 gem 'paperclip'
 gem 'paperclip-wav-mp3'
 
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
